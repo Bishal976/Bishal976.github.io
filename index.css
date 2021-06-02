@@ -1,7 +1,7 @@
 .container{
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 800px 235px 200px;
+    grid-template-rows: 800px 235px 300px;
     grid-template-areas:
     "hh" 
     "oo "
@@ -9,12 +9,15 @@
 }
 
 .head_pic{
+    display: flex;
+    align-items: center; 
+    flex-direction: column;
     grid-area: hh;
 }
 .middle-box{
     grid-area: oo;
 }
-footer{
+.footu{
     grid-area:ff;
 }
 .baby{
@@ -58,6 +61,14 @@ footer{
     nav ul li a {    
         align-items: center;
         inline-size: 275px;             /*used inline-size*/
+    }
+    .links{
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
+        flex-direction: row;
+
+
     }
 
 }
