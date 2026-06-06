@@ -1,62 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Bishal portfolio</title>
-        <meta charset="utf-8"/>
-        <script src="https://kit.fontawesome.com/a4dd9a6542.js" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css?family=Rancho&effect=shadow-multiple|neon|Roboto" rel="stylesheet" >
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit =yes">
-        <link rel="stylesheet" href="index.css" type="text/css"/>
-        <meta name="name" content="Bishal kumar portal"/>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bishal Kumar — Portfolio</title>
+  <meta name="description" content="Bishal Kumar — Senior Frontend Developer. Redirecting to the new portfolio." />
+  <meta http-equiv="refresh" content="4;url=https://proj-pi-sable.vercel.app/" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    </head>
-    <body class="container" bgcolor="silver">
-            <div class="head">
-                <div class="image"></div>
-                <div class="text">
-                    <h1 style="color: white;">Bishal kumar</h1>
-                    <img class="avatar"src="image.png" height="200px" width="200px"/>
-                    <h2 class="baby"> About Me</h2>
-                    <div id="aboutWrap">
-                        <p  id="about">An understudy guy with stretches of involvement with Technology, Design, Innovation, Management, and skill in some
-                        specialized areas such as Web Design & Development, Graphics Designing, and rehearsing dialects like HTML, CSS, JAVA,
-                        Python, and JavaScript. I love thinking about new ideas/solutions and executing them with my abilities and knowledge. I
-                        try to find solutions to problems around myself. I have also filled 4 patents and two research papers. Like a piece of
-                        my Academics, my SGPA is 9.67 and a CGPA of 9.3.
-                        </p>
-                    </div>
-                </div>
-            </div>
+    :root {
+      --bg: #0a0a0f;
+      --surface: #111118;
+      --border: rgba(255,255,255,0.08);
+      --text: #f0f0f5;
+      --muted: #6b6b80;
+      --accent: #7c6aff;
+      --accent2: #a78bfa;
+    }
 
-            <div class="middle-box" >
-                <h2 id="credientials">Credentials and Portfolio</h2>
-                <p>
-                    <a href="Bishal_CV.pdf" target="_blank">My Resume / </a>
-                    <a href="https://drive.google.com/drive/folders/1poHWYuLBUnnWYtlNjG88AMqHhBmcWOR1?usp=sharing" target="_blank">Certificates / </a>
-                    <a href="https://drive.google.com/drive/folders/1gfF8_UxOt54TWig_0u_uHPSa0Q_vdhlK?usp=sharing" target="_blank">My Artwork</a>
-                </p>
-                <h2 id="contact">Contact</h2>
-                <p> <a href="mailto:singhbishalkumarsingh@gmail.com">Email: singhbishalkumarsingh@gmail.com</a></p>
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      overflow: hidden;
+    }
 
-            </div>
-            <footer class="footer">
-                    <nav class="transpiracy">
-                        <ul class ="links">
-                            <li><a href="https://www.linkedin.com/in/bishal-kumar-054b30192" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a></li>
-                            <li><a href="https://www.github.com/Bishal976" target="_blank"><i class="fab fa-github fa-2x"></i></a></li>
-                            <li><a href="mailto:singhbishalkumarsingh@gmail.com" target="_blank"><i class="fas fa-inbox fa-2x"></i></a></li>
-                            <li><a href=" https://www.instagram.com/bishalsingh2225" target="_blank"><i class="fab fa-instagram-square fa-2x"></i></a></li>
-                            <li><a href="https://twitter.com/BishalK56217747" target="_blank"><i class="fab fa-twitter-square fa-2x"></i></a></li>
-                            <li><a href="https://www.hackerrank.com/singhbishalkuma1?hr_r=1" target="_blank"><i class="fab fa-hackerrank fa-2x"></i></a></li>
-                            <li><a href="https://leetcode.com/singhbishalkumarsingh/" target="_blank"><i class="fas fa-laptop-code fa-2x"></i></a></li>
-                            <li><a href="https://www.qwiklabs.com/public_profiles/e10ea8e8-0e5c-49dd-aed9-7021df307faf" target="_blank"><i class="fas fa-cloud fa-2x"></i></a></li>
-                       </ul>
-                    </nav>
-                    <hr>
-                    <div class="copyright">
-                        <code >Copyright (c) 2021 Bishal Kumar </code>
-                    </div>
-                    <hr>
-            </footer> 
-    </body>
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(124,106,255,0.12) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 0;
+      animation: pulse 4s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+      50%       { opacity: 1;   transform: translate(-50%, -50%) scale(1.15); }
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      padding: 24px;
+      animation: fadeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .avatar-ring {
+      position: relative;
+      width: 88px;
+      height: 88px;
+    }
+
+    .avatar-ring svg {
+      position: absolute;
+      inset: 0;
+      animation: spin 3s linear infinite;
+    }
+
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    .avatar-inner {
+      position: absolute;
+      inset: 8px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      color: var(--accent2);
+    }
+
+    .name {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 700;
+      letter-spacing: -1.5px;
+      text-align: center;
+      background: linear-gradient(135deg, #fff 30%, var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .role {
+      font-size: 15px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-align: center;
+      margin-top: -20px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 36px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      max-width: 400px;
+      width: 100%;
+      backdrop-filter: blur(12px);
+    }
+
+    .card-label {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .progress-wrap {
+      position: relative;
+      width: 64px;
+      height: 64px;
+    }
+
+    .progress-wrap svg { transform: rotate(-90deg); }
+
+    .progress-bg {
+      fill: none;
+      stroke: var(--border);
+      stroke-width: 3;
+    }
+
+    .progress-arc {
+      fill: none;
+      stroke: url(#arcGrad);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-dasharray: 163;
+      stroke-dashoffset: 163;
+      animation: fillArc 4s linear forwards;
+    }
+
+    @keyframes fillArc {
+      to { stroke-dashoffset: 0; }
+    }
+
+    .countdown {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--accent2);
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border-radius: 100px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s, opacity 0.2s;
+      box-shadow: 0 0 24px rgba(124,106,255,0.3);
+    }
+
+    .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 32px rgba(124,106,255,0.5);
+    }
+
+    .cta:active { transform: translateY(0); opacity: 0.9; }
+    .cta:hover .cta-arrow { transform: translateX(3px); }
+    .cta-arrow { transition: transform 0.2s; }
+
+    .dots { display: flex; gap: 6px; align-items: center; }
+    .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: bounce 1.2s ease-in-out infinite;
+    }
+    .dot:nth-child(2) { animation-delay: 0.2s; }
+    .dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes bounce {
+      0%, 80%, 100% { transform: scale(0.7); opacity: 0.4; }
+      40%           { transform: scale(1);   opacity: 1; }
+    }
+
+    .redirect-msg {
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <div class="avatar-ring">
+      <svg viewBox="0 0 88 88" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#7c6aff" />
+            <stop offset="100%" stop-color="#a78bfa" stop-opacity="0.1" />
+          </linearGradient>
+        </defs>
+        <circle cx="44" cy="44" r="40" fill="none" stroke="url(#ringGrad)" stroke-width="2"
+          stroke-dasharray="6 4" stroke-linecap="round" />
+      </svg>
+      <div class="avatar-inner">BK</div>
+    </div>
+
+    <div style="text-align:center; display:flex; flex-direction:column; gap:8px;">
+      <div class="name">Bishal Kumar</div>
+      <div class="role">Senior Frontend Developer</div>
+    </div>
+
+    <div class="card">
+      <span class="card-label">Portfolio has moved</span>
+
+      <div class="progress-wrap">
+        <svg width="64" height="64" viewBox="0 0 64 64">
+          <defs>
+            <linearGradient id="arcGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#7c6aff" />
+              <stop offset="100%" stop-color="#a78bfa" />
+            </linearGradient>
+          </defs>
+          <circle class="progress-bg" cx="32" cy="32" r="26" />
+          <circle class="progress-arc" cx="32" cy="32" r="26" />
+        </svg>
+        <div class="countdown" id="count">4</div>
+      </div>
+
+      <div class="redirect-msg">
+        <div class="dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+        Redirecting automatically
+      </div>
+
+      <a class="cta" href="https://proj-pi-sable.vercel.app/">
+        Take me there now
+        <span class="cta-arrow">→</span>
+      </a>
+    </div>
+
+  </div>
+
+  <script>
+    let n = 4;
+    const el = document.getElementById('count');
+    const id = setInterval(() => {
+      n--;
+      el.textContent = n;
+      if (n <= 0) {
+        clearInterval(id);
+        window.location.href = 'https://proj-pi-sable.vercel.app/';
+      }
+    }, 1000);
+  </script>
+</body>
 </html>
